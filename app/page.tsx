@@ -15,7 +15,7 @@ export default function Home() {
     try {
       const response = await fetch('/api/status')
       const data = await response.json()
-      console.log(data)
+      //console.log(data)
       setStatus(data.status)
     } catch (error) {
       setStatus(Status.Error)
