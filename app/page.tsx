@@ -1,37 +1,11 @@
 "use client";
 import { Status } from "@/types/response.status";
+import { getStatusBackground, getStatusText } from "@/utils/status.utils";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
 
-  // return the bg color class based on the status
-function getStatusBackground(status: string): string {
-  switch (status) {
-      case Status.Success:
-          return 'bg-green-300';
-      case Status.Pending:
-          return 'bg-yellow-300';
-      case Status.Error:
-          return 'bg-red-300';
-      default:
-          return 'bg-yellow-300';
-  }
-}
-// return the text color class based on the status
-function getStatusText(status: string): string {
-  switch (status) {
-      case Status.Success:
-          return 'Job completed!';
-      case Status.Pending:
-          return 'Job in progress';
-      case Status.Error:
-          return 'Service currently unaviable.';
-      default:
-          return 'Job in progress';
-  }
-}
-  
   // set initial status to pending
   const [status, setStatus] = useState(Status.Pending)
 
